@@ -1,0 +1,119 @@
+Inicio
+	Definir estructura Identification_Type
+        IdTypeIdentificacion
+        NameTypeIdentification
+    Fin Estructura
+	
+    Definir estructura Client
+        Identification 
+        TypeIdentification
+        FirstName
+        LastName
+        BirthDate
+        Age
+        CelPhone
+        City
+        Country
+        Address
+    Fin Estructura
+
+    Definir estructura Car
+        IdCar
+        ModelYear
+        Brand
+		Tuition
+		Mileage
+        Color
+        Status
+		Asset
+    Fin Estructura
+	
+	Definir estructura Role
+        IdRole
+        NameRol
+        Asset
+    Fin Estructura
+	
+	Definir estructura User
+        IdUser
+        FirstName
+        LastName
+		IdRole
+		City
+        Address
+        CelPhone
+		NumberEmployee
+    Fin Estructura
+	
+	Definir estructura Preferences
+        IdPreferences
+        NamePreferences
+    Fin Estructura
+	
+	Definir estructura Client_Preferences
+        IdPreferences
+        IdentificationClient
+    Fin Estructura
+	
+	Definir estructura Reservation
+        IdReservation
+        IdentificationClient
+        IdCar
+		NumberEmployee
+		ReservationDate
+        StartReservationDate
+        EndReservationDate
+		StateReservation
+		Amount
+		Payment
+    Fin Estructura
+	
+    Function listCarOptions()
+        // Aquí recuperamos y mostramos las opciones de auto disponibles.
+    End Function
+
+    Function storeClientInformation(client)
+        // Aquí almacenamos la información del cliente en la base de datos.
+    End Function
+
+    Function makeReservation(client, Car)
+        // Aquí registramos la reservación de auto para la cliente.
+    End Function
+
+    Function endRental(client, Car)
+        // Aquí finalizamos el alquiler de auto para el cliente.
+    End Function
+
+    // Programa principal
+    Client newClient
+    Car selectedCar
+
+    // Obtenemos información del cliente
+    Read newClient.Identification
+    Read newClient.TypeIdentification
+    Read newClient.FirstName
+    Read newClient.LastName
+    Read newClient.BirthDate
+    Read newClient.Age
+    Read newClient.CelPhone
+    Read newClient.City
+    Read newClient.Country
+    Read newClient.Address
+
+    // Mostramos opciones de autos disponibles
+    listCarOptions()
+
+    // El cliente selecciona un auto
+    Read selectedCar
+
+    // Almacenamos información del cliente
+    storeClientInformation(newClient)
+
+    // Reservamos auto seleccionado por el cliente
+    makeReservation(newClient, selectedCar)
+
+    // Finalizamos el alquiler del auto seleccionado
+    endRental(newClient, selectedCar)
+	
+	//este seria el flujo para registrar la solicitud de una renta de auto
+Fin
